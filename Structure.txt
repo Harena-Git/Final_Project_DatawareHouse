@@ -1,0 +1,19 @@
+datawarehouse_project/
+│
+├── data/                  # fichiers CSV (sources)
+│   ├── clients.csv
+│   ├── produits.csv
+│   └── commandes.csv
+│
+├── etl/                   # scripts Python (ETL)
+│   └── extract_load.py
+│
+├── dbt_project/           # projet DBT
+│
+├── airflow/               # DAGs Airflow
+│   └── dag_pipeline.py
+│
+├── warehouse/             # scripts SQL (création tables)
+│   └── schema.sql
+│
+└── README.md              # explication du projet
