@@ -1,9 +1,9 @@
 id_avis,id_client,id_rdv,note,commentaire,date_avis,recommande
-AV001,C001,RDV001,5,Excellent service, cheveux très hydratés après le soin. Je reviendrai !,2024-01-13,Oui
+AV001,C001,RDV001,5,"Excellent service, cheveux très hydratés après le soin. Je reviendrai !",2024-01-13,Oui
 AV002,C003,RDV002,5,Le soin kératine a transformé mes cheveux. Résultat lisse et brillant.,2024-02-23,Oui
 AV003,C005,RDV003,4,Très contente de la couleur. La coupe aurait pu être plus précise.,2024-03-19,Oui
 AV004,C002,RDV004,5,Consultation très utile. J'ai enfin un plan de soin adapté à mes cheveux.,2024-03-26,Oui
-AV005,C007,RDV005,5,Lissage parfait, tient très bien. Employée très professionnelle.,2024-04-21,Oui
+AV005,C007,RDV005,5,"Lissage parfait, tient très bien. Employée très professionnelle.",2024-04-21,Oui
 AV006,C009,RDV006,4,Masque efficace. Délai d'attente un peu long mais résultat satisfaisant.,2024-05-25,Oui
 AV007,C011,RDV007,3,Le défrisage est bien mais les cheveux ont subi quelques dommages.,2024-06-18,Non
 AV008,C004,RDV008,5,Rapide et propre. Prix raisonnable pour un homme.,2024-06-29,Oui

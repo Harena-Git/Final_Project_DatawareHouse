@@ -4,6 +4,9 @@ import pandas as pd
 import psycopg2
 from psycopg2.extras import execute_values
 from datetime import datetime, timedelta
+from dotenv import load_dotenv
+
+load_dotenv(os.path.join(os.path.dirname(__file__), "../.env"))
 
 # OpenWeatherMap — https://openweathermap.org/api
 # Nécessite une clé API gratuite (compte sur openweathermap.org)
@@ -39,7 +42,9 @@ def fetch_meteo_live(ville: dict) -> dict | None:
         "lang": "fr",
     }
     resp = requests.get(BASE_URL, params=params, timeout=10)
-    resp.raise_for_status()
+    if resp.status_code != 200:
+        print(f"[WARN] API météo — HTTP {resp.status_code} pour {ville['nom']} → fallback CSV")
+        return None
     data = resp.json()
 
     return {

@@ -3,6 +3,9 @@ import pandas as pd
 import psycopg2
 from psycopg2.extras import execute_values
 from datetime import datetime
+from dotenv import load_dotenv
+
+load_dotenv(os.path.join(os.path.dirname(__file__), "../.env"))
 
 DATA_DIR = os.path.join(os.path.dirname(__file__), "../data/capilhair")
 
