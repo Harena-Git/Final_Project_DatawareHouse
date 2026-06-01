@@ -1,0 +1,9 @@
+id_employe,nom_prenom,poste,date_embauche,salaire_mensuel,specialite,note_moyenne,nb_rdv_total
+E001,Randria Voahangy,Coiffeuse senior,2020-03-01,850000,Coloration et défrisage,4.7,312
+E002,Rakotobe Soa,Coiffeuse,2021-06-15,650000,Soins capillaires,4.6,248
+E003,Razafy Mino,Coiffeuse,2022-01-10,620000,Soins et coiffage bouclé,4.8,195
+E004,Andriantsoa Haja,Coiffeuse,2022-09-05,600000,Lissage et coiffage naturel,4.5,172
+E005,Rakotondrabe Solo,Coiffeur,2023-02-20,580000,Coupe homme et soins cuir chevelu,4.4,134
+E006,Ramanantsoa Vola,Apprentie,2024-01-08,380000,En formation générale,4.2,45
+E007,Ratsimba Haingo,Receptionniste,2021-03-15,500000,Accueil et caisse,,
+E008,Rakoto Jean,Manager,2019-07-01,1200000,Gestion boutique,,

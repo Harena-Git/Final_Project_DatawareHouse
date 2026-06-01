@@ -1,0 +1,18 @@
+id_produit,nom_produit,categorie,marque,prix_unitaire,type_cheveux_cible,description,stock_initial
+SK-P001,Shampoing huile de coco tropicale,Shampoing,TropiCare,9000,Frisés / crépus,Formulé pour climat humide — hydratation longue durée,115
+SK-P002,Après-shampoing fleur de tiaré,Après-shampoing,TropiCare,9800,Tous types,Parfum naturel et démêlage facilité,98
+SK-P003,Shampoing anti-humidité frizz control,Shampoing,FrizZero,10500,Ondulés / Bouclés,Lisse les cheveux en conditions tropicales,87
+SK-P004,Masque revitalisant vanille Madagascar,Masque,VanilNat,14000,Secs / Abîmés,Soin signature à la vanille locale,58
+SK-P005,Huile de palme rouge raffinée,Huile,NaturKera,8500,Frisés / crépus,Nourrit et protège contre l'humidité,102
+SK-P006,Sérum lissant frizz,Sérum,FrizZero,13500,Ondulés / Lisses,Contrôle le frisottis en milieu humide,67
+SK-P007,Crème hydratante mangue,Crème,TropiCare,10000,Frisés / crépus,Hydratation 24h + protection UV,91
+SK-P008,Shampoing sec voyage,Shampoing sec,StylePro,7500,Tous types,Pratique pour déplacements fréquents,130
+SK-P009,Baume nourrissant baobab,Baume,AfricaHair,11500,Secs / Cassants,Actifs baobab anti-casse,78
+SK-P010,Lotion démêlante légère,Lotion,TropiCare,8200,Bouclés / Frisés,Facilite le démêlage sur cheveux humides,105
+SK-P011,Masque anti-chute hibiscus,Masque,NaturKera,13000,Chute des cheveux,Fortifie le bulbe capillaire,62
+SK-P012,Conditionneur quotidien léger,Après-shampoing,FrizZero,9200,Fins,Usage quotidien sans alourdir,94
+SK-P013,Shampoing nourrissant karité,Shampoing,AfricaHair,9500,Frisés / crépus,Nourrit intensément la fibre capillaire,88
+SK-P014,Spray protecteur solaire cheveux,Spray,SunProtect,11000,Tous types,Protège contre les UV et la chaleur tropicale,73
+SK-P015,Gel twist définissant,Gel,AfricaHair,8000,Frisés / crépus,Définit et maintient les boucles naturelles,96
+SK-P016,Sérum croissance cuir chevelu,Sérum,NaturKera,16000,Chute des cheveux,Stimule la microcirculation et la pousse,55
+SK-P017,Pack rituel hebdomadaire,Pack,TropiCare,28000,Tous types,"Shampoing + masque + huile — offre bundle",42

@@ -1,0 +1,72 @@
+version: 2
+
+models:
+  - name: stg_capilhair_clients
+    description: "Clients CapilHair nettoyés"
+    columns:
+      - name: code_client
+        tests: [not_null, unique]
+      - name: nom_prenom
+        tests: [not_null]
+      - name: source_boutique
+        tests:
+          - accepted_values:
+              values: ['capilhair']
+
+  - name: stg_salonkera_clients
+    description: "Clients SalonKera nettoyés"
+    columns:
+      - name: code_client
+        tests: [not_null, unique]
+      - name: source_boutique
+        tests:
+          - accepted_values:
+              values: ['salonkera']
+
+  - name: stg_capilhair_ventes
+    description: "Ventes CapilHair nettoyées"
+    columns:
+      - name: code_vente
+        tests: [not_null, unique]
+      - name: prix_total
+        tests: [not_null]
+
+  - name: stg_salonkera_ventes
+    description: "Ventes SalonKera nettoyées"
+    columns:
+      - name: code_vente
+        tests: [not_null, unique]
+
+  - name: stg_capilhair_produits
+    description: "Produits CapilHair nettoyés"
+    columns:
+      - name: code_produit
+        tests: [not_null, unique]
+
+  - name: stg_salonkera_produits
+    description: "Produits SalonKera nettoyés"
+    columns:
+      - name: code_produit
+        tests: [not_null, unique]
+
+  - name: stg_capilhair_employes
+    description: "Employés CapilHair nettoyés"
+    columns:
+      - name: code_employe
+        tests: [not_null, unique]
+
+  - name: stg_salonkera_employes
+    description: "Employés SalonKera nettoyés"
+    columns:
+      - name: code_employe
+        tests: [not_null, unique]
+
+  - name: stg_meteo
+    description: "Données météo Antananarivo + Toamasina"
+    columns:
+      - name: date_complete
+        tests: [not_null]
+      - name: ville
+        tests:
+          - accepted_values:
+              values: ['Antananarivo', 'Toamasina']

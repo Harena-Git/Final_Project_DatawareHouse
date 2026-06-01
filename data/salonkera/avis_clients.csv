@@ -1,0 +1,16 @@
+id_avis,id_client,id_rdv,note,commentaire,date_avis,recommande
+KAV001,K001,KRDV001,5,Super expérience ! Cheveux hydratés et brillants. Le shampoing coco est incroyable.,2024-01-11,Oui
+KAV002,K004,KRDV002,5,Le massage anti-chute est vraiment efficace. Je vois déjà des résultats.,2024-02-21,Oui
+KAV003,K006,KRDV003,5,Coloration magnifique et le soin a laissé mes cheveux comme de la soie.,2024-03-23,Oui
+KAV004,K008,KRDV004,4,Soin très bien. J'aurais aimé plus de conseils sur les produits à utiliser chez moi.,2024-04-28,Oui
+KAV005,K003,KRDV005,4,Coupe propre et précise. Brushing tient bien même avec l'humidité de Toamasina !,2024-05-11,Oui
+KAV006,K007,KRDV006,3,Lissage pas assez durable vu le climat ici. À améliorer pour la zone côtière.,2024-06-06,Non
+KAV007,K012,KRDV007,5,Traitement anti-chute très sérieux. On voit que le personnel est formé.,2024-06-21,Oui
+KAV008,K002,KRDV008,5,"Rapide, propre et le cuir chevelu était nickel après. Je reviens le mois prochain.",2024-07-09,Oui
+KAV009,K013,KRDV009,5,Le masque vanille Madagascar est une expérience unique. Parfum magnifique.,2024-07-26,Oui
+KAV010,K005,KRDV010,4,Bon soin volume. Le résultat tient 3 jours — satisfaite !,2024-08-15,Oui
+KAV011,K015,KRDV011,4,Défrisage bien géré. Quelques zones auraient mérité plus d'attention.,2024-08-29,Oui
+KAV012,K011,KRDV012,5,Pellicules ont disparu après ce soin. Je recommande vivement.,2024-09-13,Oui
+KAV013,K016,KRDV014,4,Première visite très agréable. Équipe sympathique et cadre moderne.,2024-10-17,Oui
+KAV014,K009,KRDV015,5,Mes cheveux ont retrouvé leur force. Plus de casse depuis le soin !,2024-11-06,Oui
+KAV015,K006,KRDV018,5,Prestation VIP méritée. La coloration est parfaite et le lissage tient parfaitement malgré l'humidité.,2024-12-19,Oui

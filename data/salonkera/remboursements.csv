@@ -1,0 +1,6 @@
+id_remboursement,id_vente,id_client,date_demande,motif,montant_rembourse,statut,date_traitement
+KR001,SV006,K004,2024-02-24,Réaction allergique au produit,16000,Approuvé,2024-02-26
+KR002,SV009,K006,2024-03-28,Produit endommagé à la livraison,28000,Approuvé,2024-03-30
+KR003,SV022,K001,2024-08-30,Pack incomplet à la réception,28000,Approuvé,2024-09-02
+KR004,SV027,K008,2024-11-18,Produit ne correspond pas à la description,28000,Refusé — produit utilisé,
+KR005,SV025,K017,2024-10-20,Erreur de livraison,10500,Approuvé,2024-10-22

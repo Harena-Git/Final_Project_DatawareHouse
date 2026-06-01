@@ -1,0 +1,24 @@
+# Secrets — ne jamais committer
+.env
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+env/
+
+# Airflow
+airflow/logs/
+airflow/plugins/
+
+# DBT
+dbt_project/target/
+dbt_project/dbt_packages/
+dbt_project/logs/
+dbt_project/.user.yml
+
+# OS
+.DS_Store
+Thumbs.db

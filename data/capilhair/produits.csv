@@ -1,0 +1,19 @@
+id_produit,nom_produit,categorie,marque,prix_unitaire,type_cheveux_cible,description,stock_initial
+P001,Shampoing hydratant aloe vera,Shampoing,NaturHair,8500,Frisés / crépus,Hydratation intense pour cheveux secs,120
+P002,Après-shampoing nourrissant coco,Après-shampoing,NaturHair,9200,Frisés / crépus,Nourrit et démêle les cheveux bouclés,95
+P003,Shampoing micellaire purifiant,Shampoing,CleanScalp,7800,Tous types,Élimine les pellicules et impuretés,140
+P004,Masque purifiant argile verte,Masque,CleanScalp,12000,Gras / Pellicules,Purifie le cuir chevelu en profondeur,60
+P005,Shampoing fortifiant kératine,Shampoing,KeraPro,11500,Abîmés / Cassants,Renforce la fibre capillaire,80
+P006,Huile d'amla,Huile,AyurHair,9800,Tous types,Favorise la croissance et la brillance,100
+P007,Lotion volume racines,Lotion,VolumePlus,8000,Fins,Donne du volume dès la racine,75
+P008,Huile de ricin noire,Huile,NaturHair,10500,Frisés / crépus,Stimule la pousse des cheveux,90
+P009,Sérum anti-fourches,Sérum,KeraPro,14000,Abîmés,Répare et lisse les pointes abîmées,55
+P010,Spray thermoprotecteur,Spray,HeatGuard,11000,Lisses / Ondulés,Protection chaleur jusqu'à 230°C,70
+P011,Baume démêlant sans rinçage,Baume,NaturHair,9500,Bouclés / Frisés,Facilite le démêlage sur cheveux secs ou humides,85
+P012,Shampoing antipelliculaire zinc,Shampoing,CleanScalp,8800,Pellicules,Actif antipelliculaire cliniquement prouvé,110
+P013,Masque hydratation profonde,Masque,AquaHair,13500,Secs / Abîmés,Soin intensif hebdomadaire,65
+P014,Gel coiffant fixation forte,Gel,StylePro,6500,Lisses / Bouclés,Tenue longue durée sans résidu,130
+P015,Crème coiffante beurre de karité,Crème,AfroCurl,10000,Frisés / crépus,Définit les boucles et nourrit,88
+P016,Conditionneur protéiné,Après-shampoing,KeraPro,10800,Abîmés / Cassants,Reconstruction de la fibre capillaire,72
+P017,Huile de jojoba pure,Huile,NaturHair,12500,Tous types,Équilibre le sébum et hydrate le cuir chevelu,68
+P018,Mousse coiffante volume,Mousse,StylePro,7500,Fins / Ondulés,Volume et maintien léger,92

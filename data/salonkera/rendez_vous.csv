@@ -1,0 +1,19 @@
+id_rdv,id_client,id_employe,date_rdv,heure,duree_min,type_soin,statut,prix,commentaire
+KRDV001,K001,KE002,2024-01-10,09:30,60,Coupe + soin hydratant tropical,Effectué,40000,
+KRDV002,K004,KE001,2024-02-20,14:00,90,Traitement anti-chute + massage,Effectué,70000,Très efficace
+KRDV003,K006,KE003,2024-03-22,10:00,120,Coloration végétale + soin,Effectué,95000,Cliente VIP
+KRDV004,K008,KE002,2024-04-27,11:30,60,Soin hydratant profond,Effectué,50000,
+KRDV005,K003,KE004,2024-05-10,15:00,45,Coupe + brushing,Effectué,35000,
+KRDV006,K007,KE003,2024-06-05,09:00,75,Lissage + soin protecteur,Effectué,80000,
+KRDV007,K012,KE001,2024-06-20,13:30,90,Traitement anti-chute intensif,Effectué,75000,
+KRDV008,K002,KE005,2024-07-08,10:00,30,Coupe homme + soin cuir chevelu,Effectué,28000,
+KRDV009,K013,KE002,2024-07-25,14:30,60,Coupe + masque vanille,Effectué,55000,Masque signature apprécié
+KRDV010,K005,KE004,2024-08-14,11:00,45,Soin volume,Effectué,38000,
+KRDV011,K015,KE001,2024-08-28,09:30,90,Défrisage + soin réparateur,Effectué,85000,
+KRDV012,K011,KE003,2024-09-12,15:30,60,Soin antipelliculaire + coupe,Effectué,45000,
+KRDV013,K010,KE005,2024-09-27,10:30,30,Coupe homme,Effectué,22000,
+KRDV014,K016,KE002,2024-10-16,14:00,45,Coupe + soin léger,Effectué,35000,
+KRDV015,K009,KE004,2024-11-05,11:30,45,Soin anti-casse + coiffage,Effectué,42000,
+KRDV016,K014,KE003,2024-11-20,13:00,60,Twist out naturel + hydratation,Effectué,52000,
+KRDV017,K017,KE005,2024-12-04,09:00,30,Coupe homme,Effectué,22000,
+KRDV018,K006,KE001,2024-12-18,10:00,150,Coloration + lissage + soin VIP,Effectué,145000,Prestation haut de gamme

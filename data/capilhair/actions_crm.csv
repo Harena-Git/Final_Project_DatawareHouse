@@ -1,0 +1,19 @@
+id_action,id_client,id_produit,type_action,cout,date,succes,canal,message
+A001,C001,P001,Email promotionnel,1500,2024-01-05,Oui,Email,Offre -10% sur votre prochain achat
+A002,C002,P004,Appel téléphonique,3500,2024-02-01,Non,Téléphone,Rappel renouvellement produit
+A003,C003,P005,Envoi d'échantillon,8000,2024-02-15,Oui,Courrier,Échantillon shampoing kératine
+A004,C004,P007,SMS promotionnel,800,2024-03-05,Non,SMS,Nouveauté : lotion volume
+A005,C005,P008,Email promotionnel,1500,2024-03-10,Oui,Email,Pack spécial croissance cheveux
+A006,C006,P007,Notification push,500,2024-04-01,Non,Application,Rappel stock limité
+A007,C007,P009,Email promotionnel,1500,2024-04-15,Oui,Email,Sérum anti-fourches -15%
+A008,C008,P012,Appel téléphonique,3500,2024-05-03,Oui,Téléphone,Suivi satisfaction traitement pellicules
+A009,C009,P013,Envoi d'échantillon,8000,2024-05-18,Oui,Courrier,Miniature masque hydratation
+A010,C010,P005,SMS promotionnel,800,2024-06-01,Non,SMS,Offre de bienvenue -20%
+A011,C011,P001,Email promotionnel,1500,2024-06-10,Oui,Email,Programme fidélité : points doublés
+A012,C012,P002,Notification push,500,2024-07-01,Oui,Application,Votre produit favori est disponible
+A013,C013,P010,Email promotionnel,1500,2024-07-15,Non,Email,Préparez-vous à la saison sèche
+A014,C014,P013,Appel téléphonique,3500,2024-08-01,Oui,Téléphone,Conseils soin personnalisés
+A015,C015,P006,Envoi d'échantillon,8000,2024-08-18,Oui,Courrier,Découvrez l'huile d'amla
+A016,C016,P001,SMS promotionnel,800,2024-10-18,Non,SMS,Bienvenue chez CapilHair !
+A017,C017,P016,Email promotionnel,1500,2024-10-30,Oui,Email,Traitement conditionneur -10%
+A018,C018,P014,Notification push,500,2024-11-15,Non,Application,Nouveauté en boutique

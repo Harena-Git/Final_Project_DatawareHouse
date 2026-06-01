@@ -1,0 +1,62 @@
+version: 2
+
+models:
+  - name: dim_clients
+    description: "Dimension clients unifiée — CapilHair + SalonKera"
+    columns:
+      - name: id_client
+        tests: [not_null, unique]
+      - name: source_boutique
+        tests:
+          - accepted_values:
+              values: ['capilhair', 'salonkera']
+
+  - name: dim_produits
+    description: "Dimension produits unifiée"
+    columns:
+      - name: id_produit
+        tests: [not_null, unique]
+
+  - name: dim_employes
+    description: "Dimension employés unifiée"
+    columns:
+      - name: id_employe
+        tests: [not_null, unique]
+
+  - name: fact_ventes
+    description: "Faits ventes — toutes boutiques"
+    columns:
+      - name: id_vente
+        tests: [not_null, unique]
+      - name: id_client
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_clients')
+              field: id_client
+      - name: prix_total
+        tests: [not_null]
+
+  - name: fact_rendez_vous
+    description: "Faits rendez-vous — toutes boutiques"
+    columns:
+      - name: id_rdv
+        tests: [not_null, unique]
+      - name: id_client
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_clients')
+              field: id_client
+
+  - name: fact_actions_crm
+    description: "Faits actions CRM — toutes boutiques"
+    columns:
+      - name: id_action
+        tests: [not_null, unique]
+      - name: id_client
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_clients')
+              field: id_client

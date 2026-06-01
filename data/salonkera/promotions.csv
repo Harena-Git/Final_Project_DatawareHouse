@@ -1,0 +1,9 @@
+id_promo,nom_promo,type_promo,valeur_reduction,date_debut,date_fin,produits_concernes,canal,nb_utilisations,chiffre_affaires_genere
+KPR001,Ouverture SalonKera,Pourcentage,-20,2023-02-10,2023-02-28,Tous produits,Boutique + En ligne,92,680000
+KPR002,Saison des pluies — soins frizz,Pourcentage,-15,2024-01-15,2024-02-15,Shampoings et sérums frizz,SMS + Email,41,315000
+KPR003,Fête nationale Madagascar,Montant fixe,-8000,2024-06-26,2024-06-30,Tous soins en boutique,Boutique,28,230000
+KPR004,Pack tropique été,Bundle,Achat 2 = -12%,2024-07-01,2024-07-31,Soins hydratants,Boutique + En ligne,55,460000
+KPR005,Rentrée scolaire maman-enfant,Pourcentage,-10,2024-09-01,2024-09-15,Produits doux et naturels,Email,33,245000
+KPR006,Black Friday,Pourcentage,-25,2024-11-29,2024-11-30,Tous produits,En ligne,76,635000
+KPR007,Noël spécial côte est,Pack cadeau,-15,2024-12-15,2024-12-31,Pack rituel + produits sélectionnés,Boutique + En ligne,48,425000
+KPR008,Bienvenue fidèle,Pourcentage,-5,2024-01-01,2024-12-31,Prochain achat après 3 visites,Boutique,62,290000
