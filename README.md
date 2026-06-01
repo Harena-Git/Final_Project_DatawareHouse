@@ -1,239 +1,244 @@
-# 📊 Projet Data Warehouse — Analyse des ventes e-commerce
+# Projet Final — Analyse du Comportement Client (Data Warehouse)
+
+> Projet académique de type **mini-mémoire**
 
 ---
 
-## 🧠 1. Contexte du projet
+## 1. Contexte du projet
 
-Ce projet a pour objectif de mettre en place un **pipeline de données complet (Data Pipeline)** permettant de :
+Ce projet a pour objectif de mettre en place un **pipeline de données complet** pour analyser le **comportement client** d'un salon capillaire (basé sur le projet [CapilHair](../CapilHair)).
 
-* Collecter des données brutes
-* Les nettoyer et les structurer
-* Les stocker dans un Data Warehouse
-* Automatiser leur traitement
-* Les visualiser à travers des tableaux de bord
+Les données clients (types de cheveux, problèmes capillaires, habitudes d'achat, budget, canaux digitaux...) sont collectées depuis plusieurs sources, nettoyées, organisées dans un Data Warehouse, puis visualisées dans un dashboard interactif.
 
-Ce projet s’inscrit dans une démarche de **Data Engineering** et est considéré comme un **mini-mémoire**.
-
----
-
-## 🎯 2. Objectifs
-
-* Implémenter un processus **ETL (Extract, Transform, Load)**
-* Construire un **Data Warehouse**
-* Utiliser **DBT** pour les transformations
-* Automatiser le pipeline avec **Airflow**
-* Créer un **dashboard analytique**
-
----
-
-## 🧱 3. Architecture du projet
-
-Pipeline global :
+Flux global :
 
 ```
-Sources (CSV)
-   ↓
-ETL (Python)
-   ↓
-Data Warehouse (PostgreSQL)
-   ↓
-Transformation (DBT)
-   ↓
-Automatisation (Airflow)
-   ↓
-Visualisation (Dashboard)
+Données  →  Nettoyage  →  Organisation  →  Automatisation  →  Dashboard
+```
+
+La note finale dépend de la qualité de ce projet.
+
+---
+
+## 2. Objectifs
+
+- Construire un pipeline ETL multi-sources
+- Transformer et modéliser les données avec DBT
+- Automatiser l'ensemble du workflow avec Airflow
+- Surveiller l'état du pipeline (monitoring des nœuds)
+- Envoyer un rapport par email à la fin du workflow
+- Visualiser les résultats dans **Power BI**
+
+---
+
+## 3. Architecture du pipeline
+
+```
+┌──────────────────────────────────────────────────────┐
+│                      SOURCES                         │
+│   CSV (clients, ventes)  |  BDD  |  API              │
+└────────────────┬─────────────────────────────────────┘
+                 │  ETL (Extract → Transform → Load)
+                 ▼
+┌──────────────────────────────────────────────────────┐
+│            DATA WAREHOUSE (PostgreSQL)               │
+└────────────────┬─────────────────────────────────────┘
+                 │  Transformation & modélisation
+                 ▼
+┌──────────────────────────────────────────────────────┐
+│                  DBT (models, tests)                 │
+└────────────────┬─────────────────────────────────────┘
+                 │  Orchestration & automatisation
+                 ▼
+┌──────────────────────────────────────────────────────┐
+│              AIRFLOW (DAG / Workflow)                │
+│   [ETL] → [DBT run] → [Monitoring] → [Mail rapport] │
+└────────────────┬─────────────────────────────────────┘
+                 │  Visualisation
+                 ▼
+┌──────────────────────────────────────────────────────┐
+│              POWER BI (Dashboard final)              │
+└──────────────────────────────────────────────────────┘
 ```
 
 ---
 
-## 🗂️ 4. Structure du projet
+## 4. Sources de données
+
+Le projet exploite **3 sources indépendantes** :
+
+### Boutique 1 — CapilHair (Antananarivo)
+Système d'analyse comportementale des clients et d'actions CRM adaptées aux types de cheveux et aux comportements d'achat.
+
+| Fichier CSV | Contenu |
+|-------------|---------|
+| `clients.csv` | Profils : âge, sexe, type de cheveux, routine, budget |
+| `produits.csv` | Catalogue produits capillaires |
+| `ventes.csv` | Historique des achats (canal, montant, date) |
+| `actions_crm.csv` | Campagnes CRM ciblées par profil client |
+| `rendez_vous.csv` | Réservations soins en boutique |
+| `avis_clients.csv` | Notes et commentaires post-prestation |
+| `programme_fidelite.csv` | Niveaux Bronze / Argent / Or / Platine |
+| `stocks.csv` | Niveaux de stock par produit |
+| `employes.csv` | Équipe et performances |
+| `promotions.csv` | Campagnes promotionnelles |
+| `remboursements.csv` | Demandes de retour/remboursement |
+| `abonnements.csv` | Formules d'abonnement mensuel |
+
+### Boutique 2 — SalonKera (Toamasina)
+Deuxième boutique indépendante, en zone côtière tropicale — profils clients et gamme produits adaptés au climat humide.
+
+| Fichier CSV | Contenu |
+|-------------|---------|
+| `clients.csv` | Profils clients de Toamasina |
+| `produits.csv` | Gamme tropicale (frizz control, UV, humidité) |
+| `ventes.csv` | Historique des achats |
+| `actions_crm.csv` | Actions CRM adaptées au profil côtier |
+| `rendez_vous.csv` | Réservations soins |
+| `avis_clients.csv` | Notes et commentaires |
+| `programme_fidelite.csv` | Programme fidélité |
+| `stocks.csv` | Niveaux de stock |
+| `employes.csv` | Équipe SalonKera |
+| `promotions.csv` | Campagnes promotionnelles |
+| `remboursements.csv` | Retours et remboursements |
+| `abonnements.csv` | Abonnements mensuels |
+
+### Source 3 — API Météo (OpenWeatherMap)
+Données météo hebdomadaires pour les deux villes — corrélation entre conditions climatiques (humidité, pluie, saison sèche) et comportement d'achat des clients.
+
+| Fichier | Contenu |
+|---------|---------|
+| `meteo_antananarivo.csv` | Température, humidité, précipitations, saison |
+| `meteo_toamasina.csv` | Mêmes indicateurs pour le climat côtier |
+
+> Script ETL : `etl/etl_meteo.py` — appelle l'API en temps réel, bascule sur le CSV de secours si la clé API n'est pas configurée.
+
+---
+
+## 5. Outils & technologies
+
+| Outil | Rôle |
+|-------|------|
+| **Python / pandas** | ETL — extraction et chargement des données |
+| **PostgreSQL** | Data Warehouse |
+| **DBT** | Transformation et modélisation des données issues de l'ETL |
+| **Airflow** | Automatisation, orchestration du workflow complet |
+| **Power BI** | Visualisation finale (dashboard interactif) |
+
+> L'ETL transite par **Airflow** (orchestration) et les données transformées passent par **DBT**.
+
+---
+
+## 6. Workflow Airflow (DAG)
+
+Le DAG Airflow enchaîne les étapes suivantes :
+
+```
+[Extraction ETL]
+      ↓
+[Chargement Data Warehouse]
+      ↓
+[Transformation DBT]
+      ↓
+[Monitoring — vérification des nœuds]
+      ↓
+[Envoi rapport par email]
+```
+
+### Monitoring
+
+- Chaque tâche du DAG expose son statut (succès / échec / en cours)
+- Vue pipeline par **nœuds** : on voit en temps réel quelle étape tourne
+- Alertes en cas d'échec d'un nœud
+
+### Envoi de mail
+
+- Un nœud dédié envoie automatiquement un rapport par email à la fin du workflow
+- Le mail contient le résumé d'exécution (statuts, durées, éventuelles erreurs)
+
+---
+
+## 7. Vues & visualisation
+
+### Vue pipeline (Airflow)
+
+- Graphe des nœuds du DAG (vue Graph View dans Airflow)
+- Permet de voir l'état de chaque étape : en attente, en cours, succès, échec
+
+### Dashboard final (Power BI)
+
+Les données après ETL + DBT sont **chargées dans Power BI** pour produire :
+
+- Segmentation clients (type de cheveux, âge, budget)
+- Top produits / services les plus demandés
+- Évolution des ventes dans le temps
+- Analyse des canaux d'acquisition (Instagram, Facebook, TikTok...)
+- Comportement d'achat par profil client
+
+---
+
+## 8. Structure du projet
 
 ```
 datawarehouse_project/
 │
-├── data/                  # Sources de données (CSV)
-│   ├── clients.csv
-│   ├── produits.csv
-│   └── commandes.csv
+├── data/
+│   ├── capilhair/               # Boutique 1 — Antananarivo (12 CSV)
+│   │   ├── clients.csv
+│   │   ├── produits.csv
+│   │   ├── ventes.csv
+│   │   ├── actions_crm.csv
+│   │   ├── rendez_vous.csv
+│   │   ├── avis_clients.csv
+│   │   ├── programme_fidelite.csv
+│   │   ├── stocks.csv
+│   │   ├── employes.csv
+│   │   ├── promotions.csv
+│   │   ├── remboursements.csv
+│   │   └── abonnements.csv
+│   │
+│   ├── salonkera/               # Boutique 2 — Toamasina (12 CSV)
+│   │   ├── clients.csv
+│   │   ├── produits.csv
+│   │   ├── ventes.csv
+│   │   ├── actions_crm.csv
+│   │   ├── rendez_vous.csv
+│   │   ├── avis_clients.csv
+│   │   ├── programme_fidelite.csv
+│   │   ├── stocks.csv
+│   │   ├── employes.csv
+│   │   ├── promotions.csv
+│   │   ├── remboursements.csv
+│   │   └── abonnements.csv
+│   │
+│   └── meteo/                   # Source API météo (CSV de secours)
+│       ├── meteo_antananarivo.csv
+│       └── meteo_toamasina.csv
 │
-├── etl/                   # Scripts ETL Python
-│   └── extract_load.py
+├── etl/                         # Scripts ETL Python
+│   ├── etl_capilhair.py         # Chargement boutique 1
+│   ├── etl_salonkera.py         # Chargement boutique 2
+│   └── etl_meteo.py             # Appel API OpenWeatherMap + fallback CSV
 │
-├── warehouse/             # Scripts SQL
+├── warehouse/                   # Scripts SQL
 │   └── schema.sql
 │
-├── dbt_project/           # Projet DBT (transformations)
+├── dbt_project/                 # Transformations DBT
+│   ├── models/
+│   └── dbt_project.yml
 │
-├── airflow/               # DAG Airflow (automatisation)
+├── airflow/                     # DAGs Airflow
 │   └── dag_pipeline.py
 │
-└── README.md              # Documentation du projet
+└── README.md
 ```
 
 ---
 
-## 📥 5. Sources de données
+## 9. Résultats attendus
 
-Les données utilisées sont simulées sous forme de fichiers CSV :
-
-### 📄 clients.csv
-
-* Informations des clients
-
-### 📄 produits.csv
-
-* Catalogue des produits
-
-### 📄 commandes.csv
-
-* Historique des commandes
-
----
-
-## 🗄️ 6. Data Warehouse
-
-Le Data Warehouse est conçu selon un modèle simplifié inspiré du **modèle en étoile**.
-
-### Tables :
-
-* **dim_clients**
-* **dim_produits**
-* **fact_commandes**
-
-### Objectif :
-
-* Séparer les données en :
-
-  * dimensions (clients, produits)
-  * faits (commandes)
-
----
-
-## 🐍 7. ETL (Extract, Transform, Load)
-
-Le script Python permet de :
-
-1. Extraire les données depuis les fichiers CSV
-2. Transformer les données (format, nettoyage simple)
-3. Charger les données dans PostgreSQL
-
-### Technologies utilisées :
-
-* Python
-* pandas
-* psycopg2
-
----
-
-## 🔄 8. Transformations avec DBT
-
-DBT permet de :
-
-* Nettoyer les données
-* Créer des tables analytiques
-* Calculer des indicateurs
-
-### Exemples de transformations :
-
-* Chiffre d’affaires total
-* Ventes par produit
-* Ventes par mois
-* Top clients
-
----
-
-## ⚙️ 9. Automatisation avec Airflow
-
-Airflow est utilisé pour :
-
-* Automatiser l’exécution du pipeline
-* Planifier les tâches
-* Gérer les dépendances
-
-### Exemple de workflow :
-
-1. Exécution ETL
-2. Lancement DBT
-3. Mise à jour des tables analytiques
-
----
-
-## 📊 10. Visualisation des données
-
-Les données sont exploitées sous forme de dashboard.
-
-### Outils possibles :
-
-* Metabase
-* Power BI
-
-### Indicateurs affichés :
-
-* Chiffre d’affaires
-* Top produits
-* Évolution des ventes
-* Analyse clients
-
----
-
-## 🛠️ 11. Technologies utilisées
-
-| Outil      | Rôle                       |
-| ---------- | -------------------------- |
-| Python     | ETL                        |
-| PostgreSQL | Base de données            |
-| DBT        | Transformation des données |
-| Airflow    | Automatisation             |
-| Metabase   | Visualisation              |
-
----
-
-## ▶️ 12. Exécution du projet
-
-### Étapes :
-
-1. Créer la base de données PostgreSQL
-2. Exécuter le script SQL (`schema.sql`)
-3. Lancer le script ETL :
-
-```bash
-python etl/extract_load.py
-```
-
-4. Exécuter DBT :
-
-```bash
-dbt run
-```
-
-5. Lancer Airflow (optionnel pour automatisation)
-
----
-
-## 📈 13. Résultats attendus
-
-* Base de données structurée
-* Données propres et exploitables
-* Dashboard interactif
-* Pipeline automatisé
-
----
-
-## 📘 14. Conclusion
-
-Ce projet démontre la mise en place complète d’un système de traitement de données moderne, incluant :
-
-* ingestion
-* transformation
-* stockage
-* automatisation
-* visualisation
-
-Il représente une base solide pour des projets de **Data Engineering** à plus grande échelle.
-
----
-
-## 👤 15. Auteur
-
-* Noms : Harena, Ny Eja, Ny Voary, Fifaliana
-* Projet académique — Data Warehouse
+- Pipeline ETL fonctionnel sur plusieurs sources
+- Data Warehouse structuré (modèle en étoile)
+- Transformations DBT testées et documentées
+- Workflow Airflow automatisé avec monitoring et envoi de mail
+- Dashboard Power BI interactif chargé avec les données finales
