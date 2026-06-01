@@ -1,0 +1,13 @@
+salon_dw:
+  target: dev
+  outputs:
+    dev:
+      type: postgres
+      host: localhost
+      port: 5432
+      dbname: datawarehouse
+      user: postgres
+      password: "mamaika77"
+      schema: public
+      threads: 4
+

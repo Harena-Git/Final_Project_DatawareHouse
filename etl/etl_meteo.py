@@ -1,15 +1,10 @@
 import os
 import requests
 import pandas as pd
-import psycopg2
 from psycopg2.extras import execute_values
 from datetime import datetime, timedelta
-from dotenv import load_dotenv
+from db_config import get_connection
 
-load_dotenv(os.path.join(os.path.dirname(__file__), "../.env"))
-
-# OpenWeatherMap — https://openweathermap.org/api
-# Nécessite une clé API gratuite (compte sur openweathermap.org)
 API_KEY = os.getenv("OPENWEATHER_API_KEY", "")
 BASE_URL = "https://api.openweathermap.org/data/2.5/weather"
 
@@ -17,14 +12,6 @@ VILLES = [
     {"nom": "Antananarivo", "lat": -18.9137, "lon": 47.5361},
     {"nom": "Toamasina", "lat": -18.1443, "lon": 49.4023},
 ]
-
-DB_CONFIG = {
-    "host": os.getenv("DB_HOST", "localhost"),
-    "port": os.getenv("DB_PORT", 5432),
-    "dbname": os.getenv("DB_NAME", "datawarehouse"),
-    "user": os.getenv("DB_USER", "postgres"),
-    "password": os.getenv("DB_PASSWORD", ""),
-}
 
 DATA_DIR = os.path.join(os.path.dirname(__file__), "../data/meteo")
 
@@ -112,7 +99,7 @@ def run():
         return 0
 
     df = pd.DataFrame(all_records)
-    conn = psycopg2.connect(**DB_CONFIG)
+    conn = get_connection()
     load_to_db(conn, df)
     conn.close()
     print(f"[ETL Météo] Terminé — {len(df)} lignes")
