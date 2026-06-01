@@ -79,13 +79,13 @@ def load_to_db(conn, df: pd.DataFrame):
     rows = [tuple(row) for row in df.itertuples(index=False)]
 
     with conn.cursor() as cur:
-        cur.execute("DROP TABLE IF EXISTS raw_meteo")
+        cur.execute("DROP TABLE IF EXISTS staging.raw_meteo")
         col_defs = ", ".join(f'"{c}" TEXT' for c in cols)
-        cur.execute(f"CREATE TABLE raw_meteo ({col_defs})")
-        execute_values(cur, "INSERT INTO raw_meteo VALUES %s", rows)
+        cur.execute(f"CREATE TABLE staging.raw_meteo ({col_defs})")
+        execute_values(cur, "INSERT INTO staging.raw_meteo VALUES %s", rows)
 
     conn.commit()
-    print(f"[OK] raw_meteo — {len(df)} lignes chargées")
+    print(f"[OK] staging.raw_meteo — {len(df)} lignes chargées")
 
 
 def run():

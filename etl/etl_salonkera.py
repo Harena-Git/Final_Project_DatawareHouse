@@ -44,7 +44,7 @@ def load_table(conn, table_name: str, source: str = "salonkera"):
     df["source_boutique"] = source
     df["loaded_at"] = datetime.utcnow()
 
-    dest_table = f"raw_{source}_{table_name}"
+    dest_table = f"staging.raw_{source}_{table_name}"
     cols = list(df.columns)
     rows = [tuple(row) for row in df.itertuples(index=False)]
 
