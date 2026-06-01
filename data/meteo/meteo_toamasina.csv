@@ -1,0 +1,29 @@
+date,ville,temperature_max_c,temperature_min_c,humidite_pct,precipitation_mm,conditions,vent_kmh,saison,uv_index
+2024-01-01,Toamasina,32,24,92,35.5,Forte pluie,18,Été (saison des pluies),7
+2024-01-08,Toamasina,31,23,90,28.2,Pluie,16,Été (saison des pluies),7
+2024-01-15,Toamasina,33,25,94,42.1,Très forte pluie,20,Été (saison des pluies),5
+2024-01-22,Toamasina,30,22,88,18.5,Nuageux,14,Été (saison des pluies),8
+2024-02-05,Toamasina,32,24,91,32.7,Forte pluie,17,Été (saison des pluies),7
+2024-02-12,Toamasina,33,25,89,25.3,Pluie,15,Été (saison des pluies),8
+2024-02-19,Toamasina,34,26,95,48.6,Très forte pluie,22,Été (saison des pluies),5
+2024-03-04,Toamasina,32,23,88,22.4,Pluie,14,Automne (transition),8
+2024-03-18,Toamasina,30,22,85,12.8,Nuageux,12,Automne (transition),9
+2024-04-01,Toamasina,29,21,82,8.5,Partiellement nuageux,11,Automne (transition),9
+2024-04-15,Toamasina,28,20,80,5.2,Partiellement nuageux,10,Automne (transition),10
+2024-05-06,Toamasina,27,19,78,4.0,Partiellement nuageux,12,Hiver (saison sèche),10
+2024-05-20,Toamasina,26,18,76,2.5,Ensoleillé,13,Hiver (saison sèche),11
+2024-06-03,Toamasina,25,17,74,1.8,Ensoleillé,15,Hiver (saison sèche),10
+2024-06-17,Toamasina,24,16,72,1.0,Clair,17,Hiver (saison sèche),10
+2024-07-01,Toamasina,25,17,73,1.5,Clair,16,Hiver (saison sèche),10
+2024-07-15,Toamasina,26,18,75,2.2,Ensoleillé,14,Hiver (saison sèche),11
+2024-08-05,Toamasina,27,19,77,3.8,Partiellement nuageux,12,Printemps (transition),11
+2024-08-19,Toamasina,28,20,80,6.5,Partiellement nuageux,11,Printemps (transition),11
+2024-09-02,Toamasina,29,21,82,9.2,Nuageux,10,Printemps (transition),10
+2024-09-16,Toamasina,30,22,85,12.5,Nuageux,11,Printemps (transition),10
+2024-10-07,Toamasina,31,23,88,16.8,Pluie légère,13,Été (début saison pluies),9
+2024-10-21,Toamasina,32,24,90,22.4,Pluie,15,Été (début saison pluies),8
+2024-11-04,Toamasina,33,25,92,28.7,Pluie,17,Été (saison des pluies),8
+2024-11-18,Toamasina,33,25,93,35.4,Forte pluie,18,Été (saison des pluies),7
+2024-12-02,Toamasina,34,26,94,40.2,Forte pluie,19,Été (saison des pluies),7
+2024-12-16,Toamasina,35,27,95,45.8,Très forte pluie,21,Été (saison des pluies),6
+2024-12-30,Toamasina,35,27,94,42.0,Forte pluie,20,Été (saison des pluies),7

@@ -1,0 +1,9 @@
+id_promo,nom_promo,type_promo,valeur_reduction,date_debut,date_fin,produits_concernes,canal,nb_utilisations,chiffre_affaires_genere
+PR001,Soldes janvier,Pourcentage,-15,2024-01-01,2024-01-31,Tous shampoings,Boutique + En ligne,47,385000
+PR002,Saint-Valentin soins,Montant fixe,-5000,2024-02-10,2024-02-16,Masques et sérums,En ligne,23,210000
+PR003,Fêtes des mères,Pourcentage,-20,2024-05-25,2024-06-02,Soins complets,Boutique + En ligne,61,540000
+PR004,Rentrée sèche,Pack bundle,Achat 2 = -10%,2024-07-01,2024-07-31,Huiles et baumes,Boutique,38,320000
+PR005,Retour saison humide,Pourcentage,-10,2024-10-01,2024-10-15,Shampoings antipelliculaires,SMS + Email,29,175000
+PR006,Black Friday,Pourcentage,-25,2024-11-29,2024-11-30,Tous produits,En ligne,88,720000
+PR007,Noël et fêtes,Pack cadeau,Bundle 3 produits = -12%,2024-12-15,2024-12-31,Sélection cadeau,Boutique + En ligne,54,490000
+PR008,Bienvenue nouveau client,Pourcentage,-10,2024-01-01,2024-12-31,Premier achat,En ligne,36,195000

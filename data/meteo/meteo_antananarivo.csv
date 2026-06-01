@@ -1,0 +1,51 @@
+date,ville,temperature_max_c,temperature_min_c,humidite_pct,precipitation_mm,conditions,vent_kmh,saison,uv_index
+2024-01-01,Antananarivo,26,18,88,15.2,Pluie,12,Été (saison des pluies),6
+2024-01-08,Antananarivo,27,19,85,8.5,Nuageux,10,Été (saison des pluies),7
+2024-01-15,Antananarivo,28,20,90,22.4,Forte pluie,14,Été (saison des pluies),5
+2024-01-22,Antananarivo,25,17,82,5.0,Partiellement nuageux,11,Été (saison des pluies),7
+2024-02-05,Antananarivo,27,19,87,18.7,Pluie,13,Été (saison des pluies),6
+2024-02-12,Antananarivo,29,21,84,10.2,Nuageux,9,Été (saison des pluies),7
+2024-02-19,Antananarivo,28,20,91,25.1,Forte pluie,16,Été (saison des pluies),4
+2024-02-26,Antananarivo,26,18,86,12.8,Pluie,12,Été (saison des pluies),6
+2024-03-04,Antananarivo,26,17,83,9.6,Nuageux,10,Automne (transition),7
+2024-03-11,Antananarivo,24,16,79,4.2,Partiellement nuageux,8,Automne (transition),8
+2024-03-18,Antananarivo,25,16,80,6.1,Partiellement nuageux,9,Automne (transition),8
+2024-03-25,Antananarivo,23,15,76,2.0,Ensoleillé,7,Automne (transition),9
+2024-04-01,Antananarivo,22,14,72,1.5,Ensoleillé,8,Automne (transition),9
+2024-04-08,Antananarivo,21,13,70,0.0,Ensoleillé,7,Automne (transition),10
+2024-04-15,Antananarivo,20,12,68,0.0,Ensoleillé,9,Automne (transition),10
+2024-04-22,Antananarivo,19,11,65,0.0,Ensoleillé,10,Automne (transition),11
+2024-05-06,Antananarivo,18,10,62,0.0,Ensoleillé,11,Hiver (saison sèche),11
+2024-05-13,Antananarivo,17,9,60,0.0,Ensoleillé,13,Hiver (saison sèche),10
+2024-05-20,Antananarivo,16,8,58,0.0,Ensoleillé,12,Hiver (saison sèche),10
+2024-05-27,Antananarivo,15,7,55,0.0,Clair,14,Hiver (saison sèche),10
+2024-06-03,Antananarivo,16,7,54,0.0,Clair,15,Hiver (saison sèche),9
+2024-06-10,Antananarivo,15,6,52,0.0,Clair,16,Hiver (saison sèche),9
+2024-06-17,Antananarivo,14,5,50,0.0,Clair,17,Hiver (saison sèche),9
+2024-06-24,Antananarivo,14,5,51,0.0,Clair,15,Hiver (saison sèche),9
+2024-07-01,Antananarivo,15,6,53,0.0,Clair,16,Hiver (saison sèche),10
+2024-07-08,Antananarivo,16,7,55,0.0,Ensoleillé,14,Hiver (saison sèche),10
+2024-07-15,Antananarivo,16,7,54,0.0,Ensoleillé,13,Hiver (saison sèche),10
+2024-07-22,Antananarivo,17,8,57,0.0,Ensoleillé,12,Hiver (saison sèche),11
+2024-07-29,Antananarivo,18,9,59,0.0,Ensoleillé,11,Hiver (saison sèche),11
+2024-08-05,Antananarivo,19,10,61,0.0,Ensoleillé,10,Printemps (transition),11
+2024-08-12,Antananarivo,20,11,63,0.0,Ensoleillé,9,Printemps (transition),11
+2024-08-19,Antananarivo,21,12,65,1.5,Partiellement nuageux,8,Printemps (transition),11
+2024-08-26,Antananarivo,22,13,68,2.8,Partiellement nuageux,9,Printemps (transition),10
+2024-09-02,Antananarivo,23,14,70,3.5,Partiellement nuageux,8,Printemps (transition),10
+2024-09-09,Antananarivo,24,15,72,4.0,Partiellement nuageux,7,Printemps (transition),10
+2024-09-16,Antananarivo,24,16,74,5.2,Nuageux,8,Printemps (transition),9
+2024-09-23,Antananarivo,25,17,77,6.8,Nuageux,9,Printemps (transition),9
+2024-10-07,Antananarivo,25,17,79,8.5,Nuageux,10,Printemps (transition),9
+2024-10-14,Antananarivo,26,18,82,11.2,Pluie légère,11,Été (début saison pluies),8
+2024-10-21,Antananarivo,27,19,84,13.8,Pluie,12,Été (début saison pluies),8
+2024-10-28,Antananarivo,27,19,85,10.5,Pluie légère,11,Été (début saison pluies),8
+2024-11-04,Antananarivo,28,20,86,14.2,Pluie,13,Été (saison des pluies),7
+2024-11-11,Antananarivo,27,19,87,16.5,Pluie,12,Été (saison des pluies),7
+2024-11-18,Antananarivo,28,20,89,19.3,Pluie,14,Été (saison des pluies),6
+2024-11-25,Antananarivo,29,21,88,17.0,Pluie,13,Été (saison des pluies),7
+2024-12-02,Antananarivo,29,21,90,21.5,Forte pluie,15,Été (saison des pluies),6
+2024-12-09,Antananarivo,30,22,91,24.8,Forte pluie,16,Été (saison des pluies),6
+2024-12-16,Antananarivo,30,22,89,18.7,Pluie,14,Été (saison des pluies),7
+2024-12-23,Antananarivo,31,23,87,15.3,Pluie légère,12,Été (saison des pluies),7
+2024-12-30,Antananarivo,31,23,88,16.2,Pluie,13,Été (saison des pluies),7

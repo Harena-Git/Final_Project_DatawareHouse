@@ -1,0 +1,9 @@
+id_employe,nom_prenom,poste,date_embauche,salaire_mensuel,specialite,note_moyenne,nb_rdv_total
+KE001,Rasoazanany Bodo,Coiffeuse senior,2019-09-01,900000,Traitements anti-chute et soins capillaires tropicaux,4.8,358
+KE002,Randriamanantsoa Soa,Coiffeuse,2021-04-01,660000,Soins hydratants et coiffage naturel,4.6,265
+KE003,Rakotondrabe Fy,Coiffeuse,2022-06-15,640000,Coloration et lissage,4.7,218
+KE004,Razafimahatratra Hery,Coiffeuse,2023-01-20,610000,Coupe et styling,4.5,152
+KE005,Andriantsoa Dina,Coiffeur,2023-08-10,580000,Coupe homme et soins cuir chevelu,4.4,112
+KE006,Ranaivo Tantely,Apprentie,2024-03-01,380000,En formation,4.3,38
+KE007,Ramaroson Ony,Réceptionniste,2020-11-01,500000,Accueil et caisse,,
+KE008,Rakotobe Mamy,Gérante,2018-05-01,1300000,Direction boutique,,

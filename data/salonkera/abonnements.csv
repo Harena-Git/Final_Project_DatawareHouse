@@ -1,0 +1,9 @@
+id_abo,id_client,formule,prix_mensuel,date_debut,date_fin,statut,inclus
+KAB001,K004,Platine Care,90000,2024-01-01,2024-12-31,Actif,"1 soin/mois + 20% produits + livraison gratuite"
+KAB002,K006,Platine Care,90000,2023-07-01,2024-12-31,Actif,"1 soin/mois + 20% produits + livraison gratuite"
+KAB003,K015,Platine Care,90000,2024-04-01,2024-12-31,Actif,"1 soin/mois + 20% produits + livraison gratuite"
+KAB004,K001,Gold Soin,60000,2024-02-01,2024-12-31,Actif,"1 soin/2 mois + 10% produits"
+KAB005,K008,Gold Soin,60000,2024-03-01,2024-12-31,Actif,"1 soin/2 mois + 10% produits"
+KAB006,K012,Gold Soin,60000,2024-05-01,2024-12-31,Actif,"1 soin/2 mois + 10% produits"
+KAB007,K013,Gold Soin,60000,2024-06-01,2024-12-31,Actif,"1 soin/2 mois + 10% produits"
+KAB008,K010,Silver Produits,32000,2024-07-01,2024-12-31,Actif,"5% produits + 1 échantillon/mois"

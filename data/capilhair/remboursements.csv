@@ -1,0 +1,6 @@
+id_remboursement,id_vente,id_client,date_demande,motif,montant_rembourse,statut,date_traitement
+R001,V007,C005,2024-03-20,Produit endommagé à la livraison,9800,Approuvé,2024-03-22
+R002,V019,C013,2024-07-25,Erreur de commande,11000,Approuvé,2024-07-27
+R003,V024,C005,2024-10-05,Allergie au produit,17000,Approuvé,2024-10-08
+R004,V016,C011,2024-06-20,Produit ne convient pas,8500,Refusé — produit ouvert,,
+R005,V029,C003,2024-12-10,Défaut de packaging,13500,Approuvé,2024-12-12

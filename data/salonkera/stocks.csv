@@ -1,0 +1,18 @@
+id_produit,nom_produit,stock_actuel,stock_min,stock_max,date_maj,fournisseur,prix_achat,delai_livraison_jours
+SK-P001,Shampoing huile de coco tropicale,48,20,140,2024-12-01,TropiCare Distrib,4400,8
+SK-P002,Après-shampoing fleur de tiaré,40,15,120,2024-12-01,TropiCare Distrib,4800,8
+SK-P003,Shampoing anti-humidité frizz control,32,15,110,2024-12-01,FrizZero Import,5200,10
+SK-P004,Masque revitalisant vanille Madagascar,20,10,70,2024-12-01,VanilNat Local,6800,5
+SK-P005,Huile de palme rouge raffinée,55,20,125,2024-12-01,NaturKera Local,4200,4
+SK-P006,Sérum lissant frizz,26,10,80,2024-12-01,FrizZero Import,6600,10
+SK-P007,Crème hydratante mangue,38,15,110,2024-12-01,TropiCare Distrib,4900,8
+SK-P008,Shampoing sec voyage,62,25,150,2024-12-01,StylePro SA,3700,7
+SK-P009,Baume nourrissant baobab,31,15,95,2024-12-01,AfricaHair Import,5600,12
+SK-P010,Lotion démêlante légère,47,20,125,2024-12-01,TropiCare Distrib,4000,8
+SK-P011,Masque anti-chute hibiscus,24,10,75,2024-12-01,NaturKera Local,6300,5
+SK-P012,Conditionneur quotidien léger,45,20,115,2024-12-01,FrizZero Import,4500,10
+SK-P013,Shampoing nourrissant karité,35,15,110,2024-12-01,AfricaHair Import,4600,12
+SK-P014,Spray protecteur solaire cheveux,29,10,85,2024-12-01,SunProtect Euro,5400,14
+SK-P015,Gel twist définissant,43,20,120,2024-12-01,AfricaHair Import,3900,12
+SK-P016,Sérum croissance cuir chevelu,18,8,65,2024-12-01,NaturKera Local,7800,5
+SK-P017,Pack rituel hebdomadaire,16,5,50,2024-12-01,TropiCare Distrib,13700,8

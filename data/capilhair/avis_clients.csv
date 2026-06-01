@@ -1,0 +1,16 @@
+id_avis,id_client,id_rdv,note,commentaire,date_avis,recommande
+AV001,C001,RDV001,5,Excellent service, cheveux très hydratés après le soin. Je reviendrai !,2024-01-13,Oui
+AV002,C003,RDV002,5,Le soin kératine a transformé mes cheveux. Résultat lisse et brillant.,2024-02-23,Oui
+AV003,C005,RDV003,4,Très contente de la couleur. La coupe aurait pu être plus précise.,2024-03-19,Oui
+AV004,C002,RDV004,5,Consultation très utile. J'ai enfin un plan de soin adapté à mes cheveux.,2024-03-26,Oui
+AV005,C007,RDV005,5,Lissage parfait, tient très bien. Employée très professionnelle.,2024-04-21,Oui
+AV006,C009,RDV006,4,Masque efficace. Délai d'attente un peu long mais résultat satisfaisant.,2024-05-25,Oui
+AV007,C011,RDV007,3,Le défrisage est bien mais les cheveux ont subi quelques dommages.,2024-06-18,Non
+AV008,C004,RDV008,5,Rapide et propre. Prix raisonnable pour un homme.,2024-06-29,Oui
+AV009,C014,RDV009,4,Brushing bien fait. J'aurais aimé plus de conseils personnalisés.,2024-07-11,Oui
+AV010,C006,RDV010,5,Mon volume a retrouvé sa forme ! Super produits utilisés.,2024-07-23,Oui
+AV011,C013,RDV011,4,Pellicules réduites après le soin. À refaire dans 2 semaines.,2024-08-09,Oui
+AV012,C010,RDV013,5,Twist out magnifique. Les boucles sont bien définies et hydratées.,2024-09-06,Oui
+AV013,C012,RDV014,4,Coupe propre et soin léger efficace. Je recommande.,2024-09-21,Oui
+AV014,C017,RDV015,5,Soin protéiné incroyable. Mes cheveux semblent neufs.,2024-11-07,Oui
+AV015,C016,RDV016,4,Bonne première expérience chez CapilHair. Équipe accueillante.,2024-10-26,Oui

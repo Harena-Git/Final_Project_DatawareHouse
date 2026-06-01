@@ -1,0 +1,19 @@
+id_client,nom_prenom,sexe,age,email,telephone,type_cheveux,problemes,routine,reseaux_sociaux,budget_mensuel,ville,date_inscription
+C001,Rasoa Hanitra,F,26,hanitra.rasoa@gmail.com,0321234567,Frisés / crépus,Sécheresse,Simple,Instagram,35000,Antananarivo,2023-01-15
+C002,Rakoto Ando,M,33,ando.rakoto@yahoo.fr,0341122334,Bouclés,Pellicules,Complète,Facebook,75000,Antananarivo,2023-02-08
+C003,Ravaka Miora,F,21,miora.ravaka@mail.com,0339988776,Ondulés,Casse,Sportive seulement,Instagram,45000,Antananarivo,2023-03-20
+C004,Rabe Zo,M,29,zo.rabe@mg.mg,0328899771,Lisses,Manque de volume,Simple,TikTok,30000,Antananarivo,2023-04-05
+C005,Ramanandraibe Voavy,F,38,voavy.r@gmail.com,0331122445,Frisés / crépus,Chute des cheveux,Complète,Facebook,90000,Antananarivo,2023-05-12
+C006,Andriamaharo Nivo,F,24,nivo.a@yahoo.fr,0342233445,Fins,Sécheresse,Sportive seulement,Instagram,28000,Antananarivo,2023-06-18
+C007,Razafindrakoto Lala,F,31,lala.r@gmail.com,0321456789,Bouclés,Fourches,Simple,TikTok,55000,Antananarivo,2023-07-22
+C008,Rakotomalala Hery,M,27,hery.rm@mail.com,0341987654,Lisses,Pellicules,Simple,YouTube,40000,Antananarivo,2023-08-14
+C009,Ramanantsoa Fara,F,35,fara.r@gmail.com,0338765432,Ondulés,Manque de brillance,Complète,Instagram,65000,Antananarivo,2023-09-03
+C010,Andriantsoa Tojo,M,22,tojo.a@mail.com,0321567890,Bouclés,Casse,Sportive seulement,TikTok,32000,Antananarivo,2023-10-17
+C011,Razananirina Mamy,F,44,mamy.r@yahoo.fr,0342876543,Frisés / crépus,Sécheresse,Complète,Facebook,80000,Antananarivo,2023-11-09
+C012,Rakotoarivony Aina,F,19,aina.r@gmail.com,0339234567,Fins,Casse,Simple,Instagram,20000,Antananarivo,2023-12-21
+C013,Randriambola Eric,M,41,eric.r@mail.com,0321876543,Lisses,Pellicules,Simple,YouTube,60000,Antananarivo,2024-01-08
+C014,Rakotondrabe Noro,F,28,noro.r@gmail.com,0341234876,Ondulés,Fourches,Sportive seulement,Instagram,48000,Antananarivo,2024-02-14
+C015,Ranaivoson Pierre,M,36,pierre.r@yahoo.fr,0338456123,Bouclés,Chute des cheveux,Complète,Facebook,70000,Antananarivo,2024-03-01
+C016,Andriantsilavo Kanto,F,23,kanto.a@gmail.com,0321345678,Frisés / crépus,Sécheresse,Simple,Instagram,33000,Antananarivo,2024-03-18
+C017,Ratsimbazafy Nirina,F,30,nirina.r@yahoo.fr,0342567891,Bouclés,Chute des cheveux,Complète,Facebook,72000,Antananarivo,2024-04-07
+C018,Rakotonirina Fidy,M,25,fidy.r@mail.com,0339112233,Lisses,Manque de volume,Simple,TikTok,38000,Antananarivo,2024-05-12

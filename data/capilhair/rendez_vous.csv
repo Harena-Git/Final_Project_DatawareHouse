@@ -1,0 +1,19 @@
+id_rdv,id_client,id_employe,date_rdv,heure,duree_min,type_soin,statut,prix,commentaire
+RDV001,C001,E002,2024-01-12,09:00,60,Coupe + soin hydratant,Effectué,35000,Cliente satisfaite
+RDV002,C003,E003,2024-02-22,14:30,45,Soin kératine,Effectué,45000,Résultat excellent
+RDV003,C005,E001,2024-03-18,10:00,90,Coloration + coupe,Effectué,75000,
+RDV004,C002,E002,2024-03-25,11:00,30,Consultation capillaire,Effectué,15000,Plan de soin recommandé
+RDV005,C007,E004,2024-04-20,15:00,60,Lissage brésilien,Effectué,85000,
+RDV006,C009,E003,2024-05-24,09:30,45,Masque profond + coiffage,Effectué,40000,
+RDV007,C011,E001,2024-06-17,13:00,75,Défrisage + soin,Effectué,65000,
+RDV008,C004,E005,2024-06-28,10:00,30,Coupe homme,Effectué,20000,
+RDV009,C014,E002,2024-07-10,16:00,60,Coupe + brushing,Effectué,38000,
+RDV010,C006,E003,2024-07-22,11:30,45,Soin volume,Effectué,42000,
+RDV011,C013,E005,2024-08-08,09:00,30,Coupe homme + soin pellicules,Effectué,30000,
+RDV012,C015,E001,2024-08-19,14:00,90,Coloration,Annulé,,Client absent
+RDV013,C010,E004,2024-09-05,10:30,60,Twist out + hydratation,Effectué,50000,
+RDV014,C012,E002,2024-09-20,15:30,45,Coupe + soin léger,Effectué,32000,
+RDV015,C017,E003,2024-11-06,11:00,60,Soin protéiné,Effectué,55000,
+RDV016,C016,E002,2024-10-25,09:00,45,Consultation + coupe,Effectué,33000,
+RDV017,C018,E005,2024-11-20,14:00,30,Coupe homme,Effectué,20000,
+RDV018,C005,E001,2024-12-05,10:00,120,Coloration + lissage,Effectué,110000,Prestation complète

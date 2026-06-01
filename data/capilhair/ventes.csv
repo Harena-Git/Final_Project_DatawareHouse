@@ -1,0 +1,31 @@
+id_vente,id_client,id_produit,date_achat,quantite,prix_total,canal_achat,mode_paiement
+V001,C001,P001,2024-01-10,2,17000,Boutique,Espèces
+V002,C001,P002,2024-01-10,1,9200,Boutique,Espèces
+V003,C002,P003,2024-02-05,1,7800,En ligne,Mobile Money
+V004,C002,P004,2024-02-05,1,12000,En ligne,Mobile Money
+V005,C003,P005,2024-02-20,2,23000,Boutique,Carte bancaire
+V006,C004,P007,2024-03-08,1,8000,Boutique,Espèces
+V007,C005,P006,2024-03-15,1,9800,En ligne,Mobile Money
+V008,C005,P008,2024-03-15,2,21000,En ligne,Mobile Money
+V009,C006,P007,2024-04-02,1,8000,Boutique,Espèces
+V010,C007,P009,2024-04-18,1,14000,En ligne,Carte bancaire
+V011,C007,P011,2024-04-18,1,9500,En ligne,Carte bancaire
+V012,C008,P003,2024-05-07,2,15600,Boutique,Espèces
+V013,C008,P012,2024-05-07,1,8800,Boutique,Espèces
+V014,C009,P013,2024-05-22,1,13500,En ligne,Mobile Money
+V015,C010,P005,2024-06-03,1,11500,Boutique,Espèces
+V016,C011,P001,2024-06-14,3,25500,En ligne,Mobile Money
+V017,C011,P008,2024-06-14,1,10500,En ligne,Mobile Money
+V018,C012,P002,2024-07-01,1,9200,Boutique,Espèces
+V019,C013,P010,2024-07-19,2,22000,En ligne,Carte bancaire
+V020,C014,P013,2024-08-05,1,13500,Boutique,Espèces
+V021,C014,P009,2024-08-05,1,14000,Boutique,Espèces
+V022,C015,P006,2024-08-20,1,9800,En ligne,Mobile Money
+V023,C001,P011,2024-09-10,2,19000,Boutique,Espèces
+V024,C005,P001,2024-09-28,2,17000,En ligne,Mobile Money
+V025,C009,P015,2024-10-15,1,10000,Boutique,Espèces
+V026,C016,P001,2024-10-22,1,8500,Boutique,Espèces
+V027,C017,P016,2024-11-03,2,21600,En ligne,Mobile Money
+V028,C018,P014,2024-11-18,1,6500,Boutique,Espèces
+V029,C003,P013,2024-12-02,1,13500,En ligne,Carte bancaire
+V030,C012,P017,2024-12-20,1,12500,Boutique,Espèces
