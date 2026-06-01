@@ -23,36 +23,53 @@ CSV files  →  PostgreSQL  →   PostgreSQL  →  Airflow
 
 ---
 
-## ETAPE 1 — ETL
+## ETAPE 1 — Installer les dépendances
 
 ### Ce que c'est
-ETL = Extract, Transform, Load.
-Les 3 scripts Python lisent les CSV et les copient dans PostgreSQL.
+Installer tous les outils Python nécessaires pour faire tourner le projet.
 
-### Fichiers concernés
-- `etl/etl_capilhair.py` — charge les 12 CSV de CapilHair
-- `etl/etl_salonkera.py` — charge les 12 CSV de SalonKera
-- `etl/etl_meteo.py` — récupère la météo (API ou CSV de secours)
-- `etl/run_etl.py` — lance les 3 scripts dans l'ordre
-
-### Avant / Après
-- **Avant :** données dans des fichiers CSV sur votre PC
-- **Après :** données dans PostgreSQL dans le schéma `staging` — tables `raw_capilhair_clients`, `raw_salonkera_ventes`, etc.
-
-### Commande
+### Commandes
 ```bash
-python etl/run_etl.py
+pip install -r requirements.txt
+pip install dbt-core==1.8.7 dbt-postgres==1.8.2
 ```
+
+### Vérification
+```bash
+dbt --version
+```
+Doit afficher `dbt-core: 1.8.7`
 
 ### Statut
 ✅ Fait
 
 ---
 
-## ETAPE 2 — Data Warehouse (schema.sql)
+## ETAPE 2 — Créer la base PostgreSQL
 
 ### Ce que c'est
-Le fichier `warehouse/schema.sql` crée la **structure** de la base analytique — comme un plan d'architecte.
+Créer la base de données centrale où tout va transiter — données brutes, transformations DBT, tables finales pour Power BI.
+
+### Commande
+```bash
+psql -U postgres -c "CREATE DATABASE datawarehouse;"
+```
+
+### Vérification
+```bash
+psql -U postgres -c "\l"
+```
+Doit afficher `datawarehouse` dans la liste.
+
+### Statut
+✅ Fait
+
+---
+
+## ETAPE 3 — Créer les schémas et tables (schema.sql)
+
+### Ce que c'est
+Le fichier `warehouse/schema.sql` crée la **structure** de la base analytique.
 Il crée le modèle en étoile :
 
 ```
@@ -63,16 +80,39 @@ dim_date ← fact_ventes → dim_produits (quoi ?)
          dim_boutiques (où ?)
 ```
 
-### Fichiers concernés
-- `warehouse/schema.sql` — crée les schémas `staging` et `dwh` avec toutes les tables
-
-### Avant / Après
-- **Avant :** base de données vide
-- **Après :** structure en étoile créée — tables `dwh.dim_clients`, `dwh.fact_ventes`, etc. (vides, DBT les remplira)
+Les tables sont créées **vides** — c'est DBT qui les remplira.
 
 ### Commande
 ```bash
 psql -U postgres -d datawarehouse -f warehouse/schema.sql
+```
+
+### Vérification
+```bash
+# Vérifier les schémas créés
+psql -U postgres -d datawarehouse -c "\dn"
+```
+Doit afficher :
+```
+staging
+dwh
+```
+
+```bash
+# Vérifier les tables dwh créées (vides pour l'instant)
+psql -U postgres -d datawarehouse -c "\dt dwh.*"
+```
+Doit afficher :
+```
+dwh.dim_boutiques
+dwh.dim_clients
+dwh.dim_date
+dwh.dim_employes
+dwh.dim_meteo
+dwh.dim_produits
+dwh.fact_actions_crm
+dwh.fact_rendez_vous
+dwh.fact_ventes
 ```
 
 ### Statut
@@ -80,10 +120,60 @@ psql -U postgres -d datawarehouse -f warehouse/schema.sql
 
 ---
 
-## ETAPE 3 — DBT
+## ETAPE 4 — Lancer l'ETL
 
 ### Ce que c'est
-DBT lit les tables brutes du `staging` et les transforme en tables propres dans `dwh`.
+Les scripts Python lisent les CSV et les copient dans PostgreSQL (schéma `staging`).
+Tout est inséré en TEXT brut — DBT fera la transformation ensuite.
+
+### Fichiers
+- `etl/etl_capilhair.py` — charge les 12 CSV de CapilHair
+- `etl/etl_salonkera.py` — charge les 12 CSV de SalonKera
+- `etl/etl_meteo.py` — récupère la météo (API ou CSV de secours)
+- `etl/run_etl.py` — lance les 3 scripts dans l'ordre
+
+### Commande
+```bash
+python etl/run_etl.py
+```
+
+Résultat attendu :
+```
+[ETL CapilHair] Terminé — ... lignes
+[ETL SalonKera] Terminé — ... lignes
+[ETL Météo] Terminé — ... lignes
+```
+
+### Vérification
+```bash
+# Vérifier que les tables staging existent
+psql -U postgres -d datawarehouse -c "\dt staging.*"
+```
+Doit afficher toutes les tables `raw_capilhair_*`, `raw_salonkera_*`, `raw_meteo`.
+
+```bash
+# Vérifier que les données sont bien là
+psql -U postgres -d datawarehouse -c "SELECT COUNT(*) FROM staging.raw_capilhair_clients;"
+psql -U postgres -d datawarehouse -c "SELECT COUNT(*) FROM staging.raw_salonkera_clients;"
+psql -U postgres -d datawarehouse -c "SELECT COUNT(*) FROM staging.raw_capilhair_ventes;"
+psql -U postgres -d datawarehouse -c "SELECT COUNT(*) FROM staging.raw_meteo;"
+```
+Doit afficher des nombres supérieurs à 0.
+
+```bash
+# Voir les premières lignes brutes
+psql -U postgres -d datawarehouse -c "SELECT * FROM staging.raw_capilhair_clients LIMIT 3;"
+```
+
+### Statut
+✅ Fait
+
+---
+
+## ETAPE 5 — Lancer DBT
+
+### Ce que c'est
+DBT lit les tables brutes `staging.raw_*` et crée les tables analytiques propres dans `dwh`.
 
 ```
 staging.raw_capilhair_clients  ──┐
@@ -95,37 +185,59 @@ staging.raw_capilhair_ventes   ──┐
 staging.raw_salonkera_ventes   ──┘
 ```
 
-### Fichiers concernés
-- `dbt_project/dbt_project.yml` — configuration principale
-- `dbt_project/profiles.yml` — connexion PostgreSQL
-- `dbt_project/models/staging/` — 13 fichiers SQL de nettoyage
-- `dbt_project/models/marts/` — 6 fichiers SQL (dim_* et fact_*)
-- `dbt_project/models/staging/schema.yml` — tests staging
-- `dbt_project/models/marts/schema.yml` — tests marts
-
-### Ce que DBT fait concrètement
-| Commande | Ce que ça fait |
-|----------|---------------|
-| `dbt run` | Crée les tables `dwh.*` dans PostgreSQL |
-| `dbt test` | Vérifie pas de doublons, pas de valeurs nulles, clés FK valides |
-| `dbt docs generate` | Génère la documentation HTML |
-
-### Avant / Après
-- **Avant :** `dwh.dim_clients` est vide
-- **Après :** `dwh.dim_clients` contient tous les clients des 2 boutiques réunis et nettoyés
-
 ### Commandes
 ```bash
 cd dbt_project
 dbt run
-dbt test
 ```
 
-### Vérification dans PostgreSQL
+Résultat attendu :
+```
+OK created view staging.stg_capilhair_clients
+OK created view staging.stg_salonkera_clients
+...
+OK created table dwh.dim_clients
+OK created table dwh.dim_produits
+OK created table dwh.dim_employes
+OK created table dwh.fact_ventes
+OK created table dwh.fact_rendez_vous
+OK created table dwh.fact_actions_crm
+Completed with 0 errors
+```
+
+### Vérification — tables remplies
+```bash
+psql -U postgres -d datawarehouse -c "SELECT COUNT(*) FROM dwh.dim_clients;"
+psql -U postgres -d datawarehouse -c "SELECT COUNT(*) FROM dwh.dim_produits;"
+psql -U postgres -d datawarehouse -c "SELECT COUNT(*) FROM dwh.dim_employes;"
+psql -U postgres -d datawarehouse -c "SELECT COUNT(*) FROM dwh.fact_ventes;"
+psql -U postgres -d datawarehouse -c "SELECT COUNT(*) FROM dwh.fact_rendez_vous;"
+psql -U postgres -d datawarehouse -c "SELECT COUNT(*) FROM dwh.fact_actions_crm;"
+```
+Doit afficher des nombres supérieurs à 0.
+
+### Vérification — contenu des données
+```bash
+psql -U postgres -d datawarehouse
+```
+
+Puis dans psql :
 ```sql
-SELECT COUNT(*) FROM dwh.dim_clients;
-SELECT COUNT(*) FROM dwh.fact_ventes;
-SELECT COUNT(*) FROM dwh.fact_rendez_vous;
+-- Clients des 2 boutiques réunis
+SELECT code_client, nom_prenom, source_boutique, type_cheveux
+FROM dwh.dim_clients LIMIT 5;
+
+-- Ventes avec montants
+SELECT code_vente, prix_total, canal_achat
+FROM dwh.fact_ventes LIMIT 5;
+
+-- Répartition clients par boutique
+SELECT source_boutique, COUNT(*) as nb_clients
+FROM dwh.dim_clients
+GROUP BY source_boutique;
+
+-- Quitter psql
+\q
 ```
 
 ### Statut
@@ -133,31 +245,48 @@ SELECT COUNT(*) FROM dwh.fact_rendez_vous;
 
 ---
 
-## ETAPE 4 — Airflow
+## ETAPE 6 — Tester les données DBT
 
 ### Ce que c'est
-Airflow est un **chef d'orchestre**.
-Sans Airflow, vous devez lancer manuellement ETL puis DBT à chaque fois.
-Avec Airflow, vous définissez un DAG (= une recette) qui s'exécute automatiquement.
+DBT vérifie automatiquement la qualité des données :
+- Pas de doublons dans les clés primaires
+- Pas de valeurs nulles obligatoires
+- Chaque vente pointe vers un client qui existe
 
-### Ce que le DAG fait
-```
-Tous les lundis à 8h :
-  1. Lance l'ETL (capilhair + salonkera + meteo)
-  2. Quand c'est fini → lance DBT run
-  3. Quand c'est fini → lance DBT test
-  4. Quand tout est OK → pipeline terminé
-```
-
-### Fichiers concernés
-- `airflow/dag_pipeline.py` — le DAG Airflow (à créer)
-
-### Commandes (après installation)
+### Commande
 ```bash
-airflow db init
-airflow webserver --port 8080
-airflow scheduler
+dbt test
 ```
+
+Résultat attendu :
+```
+PASS ... tests
+Completed with 0 errors
+```
+
+### Statut
+⏳ En cours de test
+
+---
+
+## ETAPE 7 — Airflow (à faire)
+
+### Ce que c'est
+Airflow est un **chef d'orchestre** — il lance automatiquement ETL → DBT dans l'ordre, sans que vous tapiez les commandes manuellement.
+
+Le DAG (= la recette) fait :
+```
+1. Lance ETL capilhair + salonkera + meteo
+       ↓
+2. Lance DBT run
+       ↓
+3. Lance DBT test
+       ↓
+4. Pipeline terminé ✅
+```
+
+### Fichiers
+- `airflow/dag_pipeline.py` — à créer
 
 ### Statut
 ❌ À faire
@@ -168,29 +297,11 @@ airflow scheduler
 
 | Etape | Ce que ça fait | Statut |
 |-------|---------------|--------|
-| ETL Python | Charge les CSV dans PostgreSQL staging | ✅ Fait |
-| Schema SQL | Crée la structure dwh en étoile | ✅ Fait |
-| DBT | Transforme staging → dwh | ⏳ En test |
-| Airflow | Automatise tout le pipeline | ❌ À faire |
-| Power BI | Dashboard sur les tables dwh.* | ❌ Après DBT validé |
-
----
-
-## Ordre des commandes pour tout lancer
-
-```bash
-# 1. Créer la base
-psql -U postgres -c "CREATE DATABASE datawarehouse;"
-psql -U postgres -d datawarehouse -f warehouse/schema.sql
-
-# 2. Lancer l'ETL
-python etl/run_etl.py
-
-# 3. Lancer DBT
-cd dbt_project
-dbt run
-dbt test
-
-# 4. Vérifier
-psql -U postgres -d datawarehouse -c "SELECT COUNT(*) FROM dwh.dim_clients;"
-```
+| 1. Installation | Installer Python + DBT | ✅ Fait |
+| 2. Base PostgreSQL | Créer la base datawarehouse | ✅ Fait |
+| 3. Schema SQL | Créer la structure dwh en étoile | ✅ Fait |
+| 4. ETL Python | Charger les CSV dans staging | ✅ Fait |
+| 5. DBT run | Transformer staging → dwh | ⏳ En test |
+| 6. DBT test | Vérifier la qualité des données | ⏳ En test |
+| 7. Airflow | Automatiser tout le pipeline | ❌ À faire |
+| 8. Power BI | Dashboard sur les tables dwh.* | ❌ Après DBT validé |
