@@ -6,7 +6,7 @@
 
 ## 1. Contexte du projet
 
-Ce projet a pour objectif de mettre en place un **pipeline de données complet** pour analyser le **comportement client** d'un salon capillaire (basé sur le projet [CapilHair](../CapilHair)).
+Ce projet a pour objectif de mettre en place un **pipeline de données complet** pour analyser le **comportement client** d'un salon capillaire (basé sur le projet CapilHair.
 
 Les données clients (types de cheveux, problèmes capillaires, habitudes d'achat, budget, canaux digitaux...) sont collectées depuis plusieurs sources, nettoyées, organisées dans un Data Warehouse, puis visualisées dans un dashboard interactif.
 
