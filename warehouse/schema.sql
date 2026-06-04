@@ -208,6 +208,29 @@ CREATE TABLE IF NOT EXISTS dwh.fact_actions_crm (
 
 
 -- =============================================================
+-- MONITORING PIPELINE — historique des runs Airflow
+-- Chaque exécution du DAG écrit une ligne ici.
+-- Power BI affiche cette table pour prouver l'automatisation.
+-- =============================================================
+
+CREATE TABLE IF NOT EXISTS dwh.pipeline_runs (
+    id_run              SERIAL PRIMARY KEY,
+    dag_id              VARCHAR(100),
+    run_id              VARCHAR(200),
+    date_execution      TIMESTAMP NOT NULL,
+    statut              VARCHAR(20),           -- 'SUCCÈS' | 'ERREUR'
+    lignes_capilhair    INTEGER DEFAULT 0,
+    lignes_salonkera    INTEGER DEFAULT 0,
+    lignes_meteo        INTEGER DEFAULT 0,
+    total_lignes        INTEGER DEFAULT 0,
+    duree_secondes      NUMERIC(8,2),
+    dbt_statut          VARCHAR(20),           -- 'OK' | 'ERREUR'
+    email_envoye        BOOLEAN DEFAULT FALSE,
+    message             TEXT
+);
+
+
+-- =============================================================
 -- INDEX (performances requêtes analytiques)
 -- =============================================================
 

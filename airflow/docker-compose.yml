@@ -1,7 +1,5 @@
-version: '3.8'
-
 x-airflow-common: &airflow-common
-  image: apache/airflow:2.9.2
+  build: .
   env_file:
     - ../.env
   environment:
@@ -58,23 +56,19 @@ services:
 
   airflow-init:
     <<: *airflow-common
-    command: bash -c "pip install pandas psycopg2-binary requests python-dotenv "dbt-postgres==1.8.2" "dbt-core==1.8.7" && airflow db migrate && airflow users create --username admin --password admin --firstname Admin --lastname User --role Admin --email nyvoaryraherimandimby@gmail.com"
+    command: bash -c "airflow db migrate && airflow users create --username admin --password admin --firstname Admin --lastname User --role Admin --email nyvoaryraherimandimby@gmail.com"
     restart: on-failure
 
   airflow-webserver:
     <<: *airflow-common
-    command: >
-      bash -c "pip install pandas psycopg2-binary requests python-dotenv "dbt-postgres==1.8.2" "dbt-core==1.8.7" &&
-               airflow webserver"
+    command: airflow webserver
     ports:
       - "8080:8080"
     restart: always
 
   airflow-scheduler:
     <<: *airflow-common
-    command: >
-      bash -c "pip install pandas psycopg2-binary requests python-dotenv "dbt-postgres==1.8.2" "dbt-core==1.8.7" &&
-               airflow scheduler"
+    command: airflow scheduler
     restart: always
 
 volumes:

@@ -1,16 +1,16 @@
-id_action,id_client,id_produit,type_action,cout,date,succes,canal,message
-SA001,K001,SK-P001,Email promotionnel,1500,2024-01-04,Oui,Email,Bienvenue + offre -10% premier achat en ligne
-SA002,K002,SK-P003,SMS promotionnel,800,2024-01-22,Non,SMS,Shampoing frizz control — idéal saison humide
-SA003,K004,SK-P011,Appel téléphonique,3500,2024-02-14,Oui,Téléphone,Suivi traitement anti-chute
-SA004,K005,SK-P012,Envoi d'échantillon,8000,2024-03-01,Oui,Courrier,Miniature conditionneur léger
-SA005,K006,SK-P017,Email promotionnel,1500,2024-03-15,Oui,Email,Pack rituel hebdomadaire — offre spéciale
-SA006,K007,SK-P006,SMS promotionnel,800,2024-04-08,Non,SMS,Sérum lissant pour la saison des pluies
-SA007,K008,SK-P001,Notification push,500,2024-04-20,Oui,Application,Votre shampoing favori est en stock
-SA008,K009,SK-P010,Email promotionnel,1500,2024-05-05,Non,Email,Démêlage facile dès le premier passage
-SA009,K010,SK-P014,Envoi d'échantillon,8000,2024-05-18,Oui,Courrier,Protégez vos cheveux du soleil tropical
-SA010,K012,SK-P016,Email promotionnel,1500,2024-06-14,Oui,Email,Sérum croissance — résultats dès 4 semaines
-SA011,K013,SK-P004,Appel téléphonique,3500,2024-06-28,Oui,Téléphone,Recommandation masque vanille personnalisée
-SA012,K015,SK-P001,SMS promotionnel,800,2024-08-02,Oui,SMS,Préparez vos cheveux avant la saison sèche
-SA013,K016,SK-P012,Notification push,500,2024-09-22,Non,Application,Nouveauté : conditionneur léger quotidien
-SA014,K017,SK-P003,Email promotionnel,1500,2024-10-10,Oui,Email,Frizz control — la solution pour vos cheveux
-SA015,K004,SK-P016,Email promotionnel,1500,2024-10-24,Oui,Email,Résultats après 1 mois d'utilisation ?
+id_action;id_client;id_produit;type_action;cout;date;succes;canal;message
+SA001;K001;SK-P001;Email promotionnel;1500;04/01/2024;1;Email;Bienvenue + offre -10% premier achat en ligne
+SA002;K002;SK-P003;SMS promotionnel;800;22/01/2024;0;SMS;Shampoing frizz control — idéal saison humide
+SA003;K004;SK-P011;Appel téléphonique;3500;14/02/2024;1;Téléphone;Suivi traitement anti-chute
+SA004;K005;SK-P012;Envoi d'échantillon;8000;01/03/2024;1;Courrier;Miniature conditionneur léger
+SA005;K006;SK-P017;Email promotionnel;1500;15/03/2024;1;Email;Pack rituel hebdomadaire — offre spéciale
+SA006;K007;SK-P006;SMS promotionnel;800;08/04/2024;0;SMS;Sérum lissant pour la saison des pluies
+SA007;K008;SK-P001;Notification push;500;20/04/2024;1;Application;Votre shampoing favori est en stock
+SA008;K009;SK-P010;Email promotionnel;1500;05/05/2024;0;Email;Démêlage facile dès le premier passage
+SA009;K010;SK-P014;Envoi d'échantillon;8000;18/05/2024;1;Courrier;Protégez vos cheveux du soleil tropical
+SA010;K012;SK-P016;Email promotionnel;1500;14/06/2024;1;Email;Sérum croissance — résultats dès 4 semaines
+SA011;K013;SK-P004;Appel téléphonique;3500;28/06/2024;1;Téléphone;Recommandation masque vanille personnalisée
+SA012;K015;SK-P001;SMS promotionnel;800;02/08/2024;1;SMS;Préparez vos cheveux avant la saison sèche
+SA013;K016;SK-P012;Notification push;500;22/09/2024;0;Application;Nouveauté : conditionneur léger quotidien
+SA014;K017;SK-P003;Email promotionnel;1500;10/10/2024;1;Email;Frizz control — la solution pour vos cheveux
+SA015;K004;SK-P016;Email promotionnel;1500;24/10/2024;1;Email;Résultats après 1 mois d'utilisation ?

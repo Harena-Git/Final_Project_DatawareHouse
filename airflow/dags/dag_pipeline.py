@@ -79,11 +79,18 @@ def dbt_tests(**context):
 # ── Monitoring ───────────────────────────────────────────────
 
 def monitoring(**context):
+    import time
+    if ETL_DIR not in sys.path:
+        sys.path.insert(0, ETL_DIR)
+    from db_config import get_connection
+
     ti = context["ti"]
-    cap = ti.xcom_pull(key="lignes_capilhair", task_ids="etl_capilhair") or 0
-    ker = ti.xcom_pull(key="lignes_salonkera", task_ids="etl_salonkera") or 0
-    met = ti.xcom_pull(key="lignes_meteo",     task_ids="etl_meteo")     or 0
+    cap   = ti.xcom_pull(key="lignes_capilhair", task_ids="etl_capilhair") or 0
+    ker   = ti.xcom_pull(key="lignes_salonkera", task_ids="etl_salonkera") or 0
+    met   = ti.xcom_pull(key="lignes_meteo",     task_ids="etl_meteo")     or 0
     total = cap + ker + met
+    start = ti.xcom_pull(key="start_time", task_ids="etl_capilhair") or 0
+    duree = round(time.time() - start, 2) if start else None
 
     rapport = (
         f"RAPPORT MONITORING — {datetime.now().strftime('%Y-%m-%d %H:%M')}\n"
@@ -99,6 +106,31 @@ def monitoring(**context):
     )
     print(rapport)
     ti.xcom_push(key="rapport", value=rapport)
+
+    # Écriture dans dwh.pipeline_runs → visible dans Power BI
+    try:
+        conn = get_connection()
+        with conn.cursor() as cur:
+            cur.execute("""
+                INSERT INTO dwh.pipeline_runs
+                    (dag_id, run_id, date_execution, statut,
+                     lignes_capilhair, lignes_salonkera, lignes_meteo,
+                     total_lignes, duree_secondes, dbt_statut, email_envoye, message)
+                VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+            """, (
+                context["dag"].dag_id,
+                context["run_id"],
+                datetime.now(),
+                "SUCCÈS",
+                cap, ker, met, total,
+                duree, "OK", False,
+                rapport,
+            ))
+        conn.commit()
+        conn.close()
+        print("[OK] Run enregistré dans dwh.pipeline_runs")
+    except Exception as e:
+        print(f"[WARN] Impossible d'écrire dans pipeline_runs : {e}")
 
     if total == 0:
         raise ValueError("Aucune ligne chargée — vérifier les sources ETL.")
