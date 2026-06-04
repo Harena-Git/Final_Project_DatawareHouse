@@ -1,7 +1,7 @@
 -- =============================================================
--- DATA WAREHOUSE — Analyse du Comportement Client
+-- DATA WAREHOUSE - Analyse du Comportement Client
 -- Projet : CapilHair + SalonKera
--- Modèle : Étoile (Star Schema)
+-- Modele : Etoile (Star Schema)
 -- =============================================================
 
 -- =============================================================
@@ -40,7 +40,7 @@ CREATE TABLE IF NOT EXISTS dwh.dim_boutiques (
 INSERT INTO dwh.dim_boutiques (code_boutique, nom, ville, region, climat, date_ouverture)
 VALUES
     ('capilhair', 'CapilHair', 'Antananarivo', 'Analamanga', 'Hautes Terres', '2020-01-01'),
-    ('salonkera', 'SalonKera', 'Toamasina', 'Atsinanana', 'Côte Est (tropical humide)', '2018-05-01')
+    ('salonkera', 'SalonKera', 'Toamasina', 'Atsinanana', 'Cote Est (tropical humide)', '2018-05-01')
 ON CONFLICT (code_boutique) DO NOTHING;
 
 
@@ -108,7 +108,7 @@ CREATE TABLE IF NOT EXISTS dwh.dim_date (
     jour_semaine    SMALLINT,                     -- 1=Lundi ... 7=Dimanche
     nom_jour        VARCHAR(20),
     est_weekend     BOOLEAN,
-    saison_mada     VARCHAR(40)                   -- Été/Hiver/Automne/Printemps (Madagascar)
+    saison_mada     VARCHAR(40)                   -- Ete/Hiver/Automne/Printemps (Madagascar)
 );
 
 INSERT INTO dwh.dim_date
@@ -125,9 +125,9 @@ SELECT
     TO_CHAR(d, 'TMDay')                     AS nom_jour,
     EXTRACT(ISODOW FROM d) IN (6,7)         AS est_weekend,
     CASE
-        WHEN EXTRACT(MONTH FROM d) IN (11,12,1,2,3) THEN 'Été (saison des pluies)'
+        WHEN EXTRACT(MONTH FROM d) IN (11,12,1,2,3) THEN 'Ete (saison des pluies)'
         WHEN EXTRACT(MONTH FROM d) IN (4,5)          THEN 'Automne (transition)'
-        WHEN EXTRACT(MONTH FROM d) IN (6,7,8)        THEN 'Hiver (saison sèche)'
+        WHEN EXTRACT(MONTH FROM d) IN (6,7,8)        THEN 'Hiver (saison seche)'
         ELSE 'Printemps (transition)'
     END                                     AS saison_mada
 FROM GENERATE_SERIES('2023-01-01'::DATE, '2026-12-31'::DATE, '1 day') AS d
