@@ -1,18 +1,18 @@
-id_client,nom_prenom,sexe,age,email,telephone,type_cheveux,problemes,routine,reseaux_sociaux,budget_mensuel,ville,date_inscription
-K001,Rasoazanany Tina,F,29,tina.r@gmail.com,0321987654,Frisés / crépus,Sécheresse,Complète,Instagram,50000,Toamasina,2023-02-10
-K002,Randrianarison Luc,M,35,luc.r@yahoo.fr,0342334455,Lisses,Pellicules,Simple,Facebook,60000,Toamasina,2023-03-15
-K003,Rabemananjara Fanja,F,27,fanja.r@mail.com,0339456789,Bouclés,Casse,Sportive seulement,TikTok,42000,Toamasina,2023-04-22
-K004,Razakamanana Haja,M,31,haja.r@gmail.com,0321654321,Frisés / crépus,Chute des cheveux,Complète,YouTube,78000,Toamasina,2023-05-08
-K005,Randriamanantena Zo,F,24,zo.rr@gmail.com,0341876543,Fins,Manque de volume,Simple,Instagram,35000,Toamasina,2023-06-14
-K006,Ratsimbazafy Mala,F,40,mala.r@yahoo.fr,0338765123,Ondulés,Sécheresse,Complète,Facebook,95000,Toamasina,2023-07-01
-K007,Rakotobe Andry,M,26,andry.r@mail.com,0321234987,Bouclés,Fourches,Simple,TikTok,48000,Toamasina,2023-08-20
-K008,Andriamampionona Vola,F,33,vola.a@gmail.com,0342567234,Frisés / crépus,Sécheresse,Complète,Instagram,85000,Toamasina,2023-09-11
-K009,Rasolofo Anja,F,22,anja.r@mail.com,0339876543,Fins,Casse,Sportive seulement,Instagram,25000,Toamasina,2023-10-05
-K010,Randriatsiory Marc,M,38,marc.r@yahoo.fr,0321345876,Lisses,Manque de brillance,Simple,Facebook,55000,Toamasina,2023-11-18
-K011,Ranaivo Sendra,F,25,sendra.r@gmail.com,0342123456,Bouclés,Pellicules,Sportive seulement,TikTok,38000,Toamasina,2023-12-07
-K012,Rakotonirina Tafita,M,30,tafita.r@mail.com,0338234567,Frisés / crépus,Chute des cheveux,Complète,YouTube,72000,Toamasina,2024-01-14
-K013,Rajaonah Mialy,F,45,mialy.r@gmail.com,0321567432,Ondulés,Fourches,Complète,Facebook,88000,Toamasina,2024-02-28
-K014,Andrianaivo Rija,M,23,rija.a@yahoo.fr,0341876234,Bouclés,Sécheresse,Simple,Instagram,32000,Toamasina,2024-03-10
-K015,Rasolondraibe Vero,F,37,vero.r@mail.com,0339543216,Frisés / crépus,Sécheresse,Complète,Facebook,92000,Toamasina,2024-04-05
-K016,Randrianasolo Feno,F,28,feno.r@gmail.com,0321432198,Fins,Casse,Simple,Instagram,40000,Toamasina,2024-05-19
-K017,Rakotoarison Mick,M,32,mick.r@mail.com,0342654321,Lisses,Pellicules,Simple,TikTok,65000,Toamasina,2024-06-08
+id_client;nom_prenom;sexe;age;email;telephone;type_cheveux;problemes;routine;reseaux_sociaux;budget_mensuel;ville;date_inscription
+K001;Rasoazanany Tina;Femme;29;tina.r@gmail.com;0321987654;Frisés / crépus;Sécheresse;Complète;Instagram;50 000;Toamasina;10/02/2023
+K002;Randrianarison Luc;Homme;35;luc.r@yahoo.fr;0342334455;Lisses;Pellicules;Simple;Facebook;60 000;Toamasina;15/03/2023
+K003;Rabemananjara Fanja;Femme;27;fanja.r@mail.com;0339456789;Bouclés;Casse;Sportive seulement;TikTok;42 000;Toamasina;22/04/2023
+K004;Razakamanana Haja;Homme;31;haja.r@gmail.com;0321654321;Frisés / crépus;Chute des cheveux;Complète;YouTube;78 000;Toamasina;08/05/2023
+K005;Randriamanantena Zo;Femme;24;zo.rr@gmail.com;0341876543;Fins;Manque de volume;Simple;Instagram;35 000;Toamasina;14/06/2023
+K006;Ratsimbazafy Mala;Femme;40;mala.r@yahoo.fr;0338765123;Ondulés;Sécheresse;Complète;Facebook;95 000;Toamasina;01/07/2023
+K007;Rakotobe Andry;Homme;26;andry.r@mail.com;0321234987;Bouclés;Fourches;;TikTok;48 000;Toamasina;20/08/2023
+K008;Andriamampionona Vola;Femme;33;vola.a@gmail.com;0342567234;Frisés / crépus;Sécheresse;Complète;Instagram;85 000;Toamasina;11/09/2023
+K009;Rasolofo Anja;Femme;22;anja.r@mail.com;0339876543;Fins;Casse;Sportive seulement;;25 000;Toamasina;05/10/2023
+K010;Randriatsiory Marc;Homme;38;marc.r@yahoo.fr;0321345876;Lisses;Manque de brillance;Simple;Facebook;55 000;Toamasina;18/11/2023
+K011;Ranaivo Sendra;Femme;25;sendra.r@gmail.com;0342123456;Bouclés;Pellicules;Sportive seulement;TikTok;38 000;Toamasina;07/12/2023
+K012;Rakotonirina Tafita;Homme;30;tafita.r@mail.com;0338234567;Frisés / crépus;Chute des cheveux;Complète;;72 000;Toamasina;14/01/2024
+K013;Rajaonah Mialy;Femme;45;mialy.r@gmail.com;0321567432;Ondulés;Fourches;Complète;Facebook;88 000;Toamasina;28/02/2024
+K014;Andrianaivo Rija;Homme;23;rija.a@yahoo.fr;0341876234;Bouclés;Sécheresse;;Instagram;32 000;Toamasina;10/03/2024
+K015;Rasolondraibe Vero;Femme;37;vero.r@mail.com;0339543216;Frisés / crépus;Sécheresse;Complète;Facebook;92 000;Toamasina;05/04/2024
+K016;Randrianasolo Feno;Femme;28;feno.r@gmail.com;0321432198;Fins;Casse;Simple;Instagram;40 000;Toamasina;19/05/2024
+K017;Rakotoarison Mick;Homme;32;mick.r@mail.com;0342654321;Lisses;Pellicules;Simple;TikTok;65 000;Toamasina;08/06/2024

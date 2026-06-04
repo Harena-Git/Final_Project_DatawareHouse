@@ -18,5 +18,6 @@ datawarehouse_project/
 │
 └── README.md              # explication du projet
 
+cd airflow
 docker compose down -v
-docker compose --env-file ../.env up
+docker compose --env-file ../.env up -d
